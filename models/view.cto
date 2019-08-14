@@ -1,0 +1,27 @@
+// namespace identifies all objects with view data
+namespace org.log.view
+
+// document viewing log
+asset View identified by id
+{
+  o String id  // calculated upon creation
+
+  o String userid  // obtained from database: User.ID
+  o String dochash  // obtained from database: Document.DocumentHash
+  o String date  // date is stored upon creation
+}
+
+// transaction to add new document viewing data
+transaction AddDocView
+{
+  o String userid
+  o String dochash
+}
+
+// event for ViewDoc transaction 
+event DocViewEvent
+{
+  o String userid
+  o String dochash
+  o String date
+}

@@ -1,0 +1,27 @@
+// namespace identifies all objects with entity data
+namespace org.log.entity
+
+// entity of interest log
+asset Entity identified by id
+{
+  o String id  // calculated upon creation
+
+  o String userid  // obtained from database: Entity.UserID
+  o String tin  // obtained from database: Entity.TIN
+  o String date  // date is stored upon creation
+}
+
+// transaction to add new entity of interest data
+transaction AddNewEntity 
+{
+  o String userid
+  o String tin
+}
+
+// event for NewEntity transaction
+event NewEntityEvent
+{
+  o String userid
+  o String tin 
+  o String date
+}
